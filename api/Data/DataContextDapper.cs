@@ -7,8 +7,8 @@ namespace ProductManagerAPI.Data
     public class DataContextDapper
     {
         private readonly IConfiguration _config;
-        private IDbConnection _connection;
-        private SqlConnection _dbConnection;
+        private readonly IDbConnection _connection;
+        private readonly SqlConnection _dbConnection;
 
         public DataContextDapper(IConfiguration config)
         {
