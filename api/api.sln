@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api", "api.csproj", "{0F2A7998-5F23-4496-9710-AE0F78206478}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api", "api.csproj", "{0F2A7998-5F23-4496-9710-AE0F78206478}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductManagerAPI", "C:\Users\Dell\source\repos\ProductManagerAPI\ProductManagerAPI\ProductManagerAPI.csproj", "{FC4BF92D-74EA-402A-A5FB-6E7BEFC558BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0F2A7998-5F23-4496-9710-AE0F78206478}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F2A7998-5F23-4496-9710-AE0F78206478}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F2A7998-5F23-4496-9710-AE0F78206478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC4BF92D-74EA-402A-A5FB-6E7BEFC558BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC4BF92D-74EA-402A-A5FB-6E7BEFC558BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC4BF92D-74EA-402A-A5FB-6E7BEFC558BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC4BF92D-74EA-402A-A5FB-6E7BEFC558BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
