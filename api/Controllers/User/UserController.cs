@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using ProductManagerAPI.Data;
+﻿using api.Helpers;
+using Microsoft.AspNetCore.Mvc;
+using api.Data;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace api.Controllers.User
@@ -9,10 +10,13 @@ namespace api.Controllers.User
     //[SwaggerTag("User")]
     public partial class UserController : ControllerBase
     {
-        DataContextDapper _dapper;
+        readonly DataContextDapper _dapper;
+        readonly AuthHelper _authHelper;
+
         public UserController(IConfiguration config)
         {
             _dapper = new DataContextDapper(config);
+            _authHelper = new AuthHelper(config);
         }
 
         [HttpGet("test")]

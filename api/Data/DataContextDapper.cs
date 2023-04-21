@@ -2,7 +2,7 @@
 using Microsoft.Data.SqlClient;
 using System.Data;
 
-namespace ProductManagerAPI.Data
+namespace api.Data
 {
     public class DataContextDapper
     {
@@ -17,14 +17,14 @@ namespace ProductManagerAPI.Data
             _dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
         }
 
-        public IEnumerable<T> LoadData<T>(string sql)
+        public IEnumerable<T> LoadData<T>(string sql, object? parameters = null)
         {
-            return _connection.Query<T>(sql);
+            return _connection.Query<T>(sql, parameters);
         }
 
-        public T LoadDataSingle<T>(string sql)
+        public T LoadDataSingle<T>(string sql, object? parameters = null)
         {
-            return _connection.QuerySingleOrDefault<T>(sql);
+            return _connection.QuerySingleOrDefault<T>(sql, parameters);
         }
 
         public bool ExecuteSql(string sql)
@@ -37,21 +37,28 @@ namespace ProductManagerAPI.Data
             return _connection.Execute(sql);
         }
 
-        public bool ExecuteSqlWithParameters(string sql, List<SqlParameter> parameters)
+        //public bool ExecuteSqlWithParameters(string sql, List<SqlParameter> parameters)
+        public bool ExecuteSqlWithParameters(string sql, object parameters)
         {
-            SqlCommand commandWithParams = new SqlCommand(sql);
+            //SqlCommand commandWithParams = new SqlCommand(sql);
 
-            foreach (SqlParameter parameter in parameters)
-            {
-                commandWithParams.Parameters.Add(parameter);
-            }
+            //foreach (SqlParameter parameter in parameters)
+            //{
+            //    commandWithParams.Parameters.Add(parameter);
+            //}
+            //_dbConnection.Open();
+            //commandWithParams.Connection = _dbConnection;
+
+            //int rowsAffected = commandWithParams.ExecuteNonQuery();
+            //_dbConnection.Close();
+
+            //return rowsAffected > 0;
             _dbConnection.Open();
-            commandWithParams.Connection = _dbConnection;
-
-            int rowsAffected = commandWithParams.ExecuteNonQuery();
+            int rowsAffected = _dbConnection.Execute(sql, parameters);
             _dbConnection.Close();
 
             return rowsAffected > 0;
         }
+        
     }
 }

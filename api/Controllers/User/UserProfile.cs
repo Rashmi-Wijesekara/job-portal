@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ProductManagerAPI.Data;
+using api.Data;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace api.Controllers.User
