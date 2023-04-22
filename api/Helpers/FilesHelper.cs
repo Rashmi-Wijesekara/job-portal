@@ -29,5 +29,24 @@
 
             return fileName;
         }
+
+        public bool DeleteFile(string fileName)
+        {
+            //get file path
+            string folderPath = Path.Combine(_hostingEnvironment.WebRootPath, "Uploads");
+            string filePath = Path.Combine(folderPath, fileName);
+
+            //check if file exists
+            if (File.Exists(filePath))
+            {
+                //delete file
+                File.Delete(filePath);
+                return true;
+            }
+
+            //file does not exist
+            return false;
+        }
+
     }
 }

@@ -33,8 +33,6 @@ namespace api.Controllers.User
                 return BadRequest("Invalid location id");
             }
 
-            // TODO: store cv and coverLetter files
-
             //check file types
             if (userForRegistration.Cv == null || userForRegistration.CoverLetter == null ||
                 !userForRegistration.Cv.FileName.EndsWith(".pdf") || !userForRegistration.CoverLetter.FileName.EndsWith(".pdf"))
