@@ -5,7 +5,7 @@ using api.Dtos.User;
 
 namespace api.Controllers.User
 {
-    public partial class UserController
+    public partial class UsersController
     {
         [HttpPost("Auth/Register")]
         [SwaggerOperation("add a new user", Tags = new[] { "User Auth" })]

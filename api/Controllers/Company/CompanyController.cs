@@ -5,7 +5,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace api.Controllers.Company
 {
     [ApiController]
-    [Route("Company")]
+    [Route("Companies")]
     public partial class CompanyController : ControllerBase
     {
         [HttpPost("Auth/Register")]

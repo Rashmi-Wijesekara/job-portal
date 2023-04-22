@@ -9,9 +9,9 @@ using System.Security.Cryptography;
 namespace api.Controllers.User
 {
     [ApiController]
-    [Route("User")]
+    [Route("Users")]
     //[SwaggerTag("User")]
-    public partial class UserController : ControllerBase
+    public partial class UsersController : ControllerBase
     {
         readonly DataContextDapper _dapper;
         readonly AuthHelper _authHelper;
@@ -19,7 +19,7 @@ namespace api.Controllers.User
         readonly FilesHelper _filesHelper;
         readonly CheckIdHelper _checkIdHelper;
 
-        public UserController(IConfiguration config, IWebHostEnvironment hostingEnvironment)
+        public UsersController(IConfiguration config, IWebHostEnvironment hostingEnvironment)
         {
             _dapper = new DataContextDapper(config);
             _authHelper = new AuthHelper(config);

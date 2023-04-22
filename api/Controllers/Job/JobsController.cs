@@ -5,11 +5,11 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace api.Controllers.Job
 {
     [ApiController]
-    [Route("Job")]
-    public partial class JobController : ControllerBase
+    [Route("Jobs")]
+    public partial class JobsController : ControllerBase
     {
         DataContextDapper _dapper;
-        public JobController(IConfiguration config)
+        public JobsController(IConfiguration config)
         {
             _dapper = new DataContextDapper(config);
         }
