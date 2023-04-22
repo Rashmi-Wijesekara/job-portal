@@ -1,4 +1,4 @@
-﻿namespace api.Dtos
+﻿namespace api.Dtos.User
 {
     public class ForRegistrationDto
     {
@@ -7,8 +7,8 @@
         public string Email { get; set; }
         public string Password { get; set; }
         public string PasswordConfirm { get; set; }
-        public string Cv { get; set; }
-        public string CoverLetter { get; set; }
+        public IFormFile? Cv { get; set; }
+        public IFormFile? CoverLetter { get; set; }
         public int LocationId { get; set; }
 
         public ForRegistrationDto()
@@ -18,8 +18,6 @@
             Password ??= "";
             PasswordConfirm ??= "";
             Email ??= "";
-            Cv ??= "";
-            CoverLetter ??= "";
         }
     }
 }

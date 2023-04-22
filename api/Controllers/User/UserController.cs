@@ -12,11 +12,15 @@ namespace api.Controllers.User
     {
         readonly DataContextDapper _dapper;
         readonly AuthHelper _authHelper;
+        readonly IWebHostEnvironment _hostingEnvironment;
+        readonly FilesHelper _filesHelper;
 
-        public UserController(IConfiguration config)
+        public UserController(IConfiguration config, IWebHostEnvironment hostingEnvironment)
         {
             _dapper = new DataContextDapper(config);
             _authHelper = new AuthHelper(config);
+            _hostingEnvironment = hostingEnvironment;
+            _filesHelper = new FilesHelper(_hostingEnvironment);
         }
 
         [HttpGet("test")]

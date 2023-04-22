@@ -1,8 +1,7 @@
-﻿using api.Dtos;
-using Microsoft.AspNetCore.Mvc;
-using api.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Security.Cryptography;
+using api.Dtos.User;
 
 namespace api.Controllers.User
 {
@@ -10,7 +9,7 @@ namespace api.Controllers.User
     {
         [HttpPost("Auth/Register")]
         [SwaggerOperation("add a new user", Tags = new[] { "User Auth" })]
-        public IActionResult Register(ForRegistrationDto userForRegistration)
+        public async Task<IActionResult> Register([FromForm] ForRegistrationDto userForRegistration)
         {
             //check password
             if (userForRegistration.Password != userForRegistration.PasswordConfirm)
@@ -33,6 +32,20 @@ namespace api.Controllers.User
             {
                 return BadRequest("Invalid location id");
             }
+
+            // TODO: store cv and coverLetter files
+
+            //check file types
+            if (userForRegistration.Cv == null || userForRegistration.CoverLetter == null ||
+                !userForRegistration.Cv.FileName.EndsWith(".pdf") || !userForRegistration.CoverLetter.FileName.EndsWith(".pdf"))
+            {
+                return BadRequest("Please upload valid PDF files for CV and cover letter");
+            }
+
+            //upload files
+            string cvPath = await _filesHelper.UploadFileAsync(userForRegistration.Cv);
+            string coverLetterPath = await _filesHelper.UploadFileAsync(userForRegistration.CoverLetter);
+
 
             //set password hash & salt
             byte[] passwordSalt = new byte[128 / 8];
@@ -60,8 +73,8 @@ namespace api.Controllers.User
                 userForRegistration.Email,
                 passwordHash,
                 passwordSalt,
-                userForRegistration.Cv,
-                userForRegistration.CoverLetter,
+                Cv = cvPath,
+                CoverLetter = coverLetterPath,
                 userForRegistration.LocationId
             };
 
@@ -72,6 +85,8 @@ namespace api.Controllers.User
             }
             return Ok();
         }
+
+
 
         [HttpPost("Auth/Login")]
         [SwaggerOperation("user login", Tags = new[] { "User Auth" })]
