@@ -15,13 +15,13 @@
 
 Here're some of the project's best features:
 
-*   User Registration: Users can create an account and provide basic information such as name email and password. They can also upload their CV and cover letter and list their skills and experience.
-*   Company Registration: Companies can create an account and provide basic information such as name email and password. They can also create job postings including job title job description and requirements.
-*   Job Postings: Users can browse and search for job postings based on various criteria such as location industry job type etc. They can also view detailed information about each job posting including job description requirements and application instructions.
-*   Job Application: Users can apply for job postings directly through the application including submitting their CV and cover letter. They can also track their application status and receive notifications when the status is updated by the employer.
-*   Application Management: Employers can view and manage job applications including updating the status of each application (screened rejected or shortlisted) and providing feedback to candidates.
-*   User Profile: Users can view their profile including their personal information uploaded documents and job application history. They can also edit their profile and delete their account if necessary.
-*   Company Profile: Companies can view their profile including their basic information and job postings. They can also edit their profile and delete their account if necessary.
+*   **User Registration** : Users can create an account and provide basic information such as name email and password. They can also upload their CV and cover letter and list their skills and experience.
+*   **Company Registration** : Companies can create an account and provide basic information such as name email and password. They can also create job postings including job title job description and requirements.
+*   **Job Postings** : Users can browse and search for job postings based on various criteria such as location industry job type etc. They can also view detailed information about each job posting including job description requirements and application instructions.
+*   **Job Application** : Users can apply for job postings directly through the application including submitting their CV and cover letter. They can also track their application status and receive notifications when the status is updated by the employer.
+*   **Application Management** : Employers can view and manage job applications including updating the status of each application (screened rejected or shortlisted) and providing feedback to candidates.
+*   **User Profile** : Users can view their profile including their personal information uploaded documents and job application history. They can also edit their profile and delete their account if necessary.
+*   **Company Profile** : Companies can view their profile including their basic information and job postings. They can also edit their profile and delete their account if necessary.
 
   
   
