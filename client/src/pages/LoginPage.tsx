@@ -1,13 +1,13 @@
 import React from "react";
-import RegisterForm from "../components/auth/RegisterForm";
+import LoginForm from "../components/auth/LoginForm";
 import PageContainer from "../components/shared/PageContainer";
 
-const RegisterPage = () => {
+const LoginPage = () => {
 	return (
 		<PageContainer>
-			<RegisterForm />
+			<LoginForm />
 		</PageContainer>
 	);
 };
 
-export default RegisterPage;
+export default LoginPage;

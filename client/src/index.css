@@ -1,4 +1,4 @@
-.my-6 {
-	margin-top: ($spacer * 5) !important;
-	margin-bottom: ($spacer * 5) !important;
+.btn-custom {
+	background-color: #0DC5B9;
+	font-weight: bold;
 }

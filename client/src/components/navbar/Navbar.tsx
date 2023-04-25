@@ -3,11 +3,15 @@ import {
 	Navbar as Bn,
 	Container,
 	Nav,
+	Button
 } from "react-bootstrap";
 import LogoImage from "../../assets/logo.png";
 import UserImage from "../../assets/user.svg";
 
 const Navbar = () => {
+	const loginStatus = false
+	const register = true
+
 	return (
 		<>
 			<Bn
@@ -33,14 +37,28 @@ const Navbar = () => {
 						<Nav.Link href="#" className="mx-3">
 							Applications
 						</Nav.Link>
-						<Nav.Link>
-							<img
-								src={UserImage}
-								alt=""
-								width="40"
-								height="40"
-							/>
-						</Nav.Link>
+						{loginStatus && (
+							<Nav.Link>
+								<img
+									src={UserImage}
+									alt=""
+									width="40"
+									height="40"
+								/>
+							</Nav.Link>
+						)}
+
+						{!loginStatus && register && (
+							<Nav.Link>
+								<Button>Login</Button>
+							</Nav.Link>
+						)}
+
+						{!loginStatus && !register && (
+							<Nav.Link>
+								<Button>Register</Button>
+							</Nav.Link>
+						)}
 					</Nav>
 				</Container>
 			</Bn>

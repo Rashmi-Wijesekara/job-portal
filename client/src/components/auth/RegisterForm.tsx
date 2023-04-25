@@ -3,13 +3,12 @@ import {
 	Form,
 	Row,
 	Col,
-	Button
+	Button,
 } from "react-bootstrap";
-import MultiSelect from "./MultiSelect";
 
 const RegisterForm = () => {
 	return (
-		<Container className="shadow-lg py-4 px-5 my-6 bg-body rounded-3">
+		<Container className="shadow-lg py-4 px-5 bg-body rounded-3">
 			<div className="fs-4 fw-bold text-center mb-4">
 				User Registration
 			</div>
@@ -51,14 +50,7 @@ const RegisterForm = () => {
 							</Form.Select>
 						</Col>
 
-						<Col>
-							<Form.Label>Skills</Form.Label>
-							<Form.Select aria-label="Default select example">
-								<option value="1">One</option>
-								<option value="2">Two</option>
-								<option value="3">Three</option>
-							</Form.Select>
-						</Col>
+						<Col></Col>
 					</Row>
 				</Form.Group>
 				<Form.Group
@@ -82,10 +74,7 @@ const RegisterForm = () => {
 						</Col>
 					</Row>
 				</Form.Group>
-				<div className="mb-3">
-					<MultiSelect />
-				</div>
-				<Button variant="primary" type="submit">
+				<Button type="submit">
 					Register
 				</Button>
 			</Form>
